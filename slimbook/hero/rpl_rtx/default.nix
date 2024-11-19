@@ -13,4 +13,9 @@
     intelBusId = lib.mkDefault "PCI:0:2:0";
     nvidiaBusId = lib.mkDefault "PCI:1:0:0";
   };
+
+  services = {
+    fwupd.enable = lib.mkDefault true;
+    thermald.enable = lib.mkDefault true;
+};
 }

@@ -1,5 +1,7 @@
 # Tested Hardware
 
+This configuration is for the [Slimbook Hero](https://slimbook.com/en/shop/product/hero-intel-i7-13620h-1115) with an RTX 4060.
+
 ```bash
 $ lspci -nn
 00:00.0 Host bridge [0600]: Intel Corporation Device [8086:a715]

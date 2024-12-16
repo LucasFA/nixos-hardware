@@ -8,7 +8,6 @@
 	../../../common/pc/ssd
   ];
 
-  services.xserver.videoDrivers = lib.mkDefault [ "nvidia" ];
   hardware.nvidia.prime = { 
     # Make sure to use the correct Bus ID values for your system!
     intelBusId = lib.mkDefault "PCI:0:2:0";

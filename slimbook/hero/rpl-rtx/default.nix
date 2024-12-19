@@ -21,7 +21,7 @@
         nvidiaBusId = lib.mkDefault "PCI:1:0:0";
       };
       powerManagement = {
-        enable = lib.mkIf (config.hardware.nvidia.prime.sync.enable) (lib.mkDefault true);
+        enable = lib.mkDefault true;
         finegrained = lib.mkIf (config.hardware.nvidia.prime.offload.enable) (lib.mkDefault true);
       };
     };

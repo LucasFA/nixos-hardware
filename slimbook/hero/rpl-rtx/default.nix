@@ -1,8 +1,8 @@
 { config, lib, ... }:
 {
   imports = [
-    # ../../../common/cpu/intel
-    # ../../../common/gpu/intel/coffee-lake
+    ../../../common/cpu/intel
+    ../../../common/gpu/intel/coffee-lake
     ../../../common/gpu/nvidia/ada-lovelace
     ../../../common/gpu/nvidia/prime.nix
     ../../../common/pc/laptop

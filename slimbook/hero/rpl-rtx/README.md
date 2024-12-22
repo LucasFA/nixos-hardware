@@ -2,13 +2,15 @@
 
 This configuration is for the Slimbook Hero with an i7-13620H and an RTX 4060.
 Model name: SLIMBOOK HERO-RPL-RTX.
+
 To run software on your Nvidia GPU, use the `nvidia-offload` command. For example:
-```
+```bash
 nvidia-offload `nix-shell -p glxinfo --run 'glxgears'`
 ```
 For more information, visit: https://wiki.nixos.org/wiki/NVIDIA#Offload_mode
 
 <details><summary>System information</summary>
+
 ```bash
 >neofetch
 OS: NixOS 24.11.20241216.3945713 (Vicuna) x86_64 
@@ -54,6 +56,7 @@ $ lspci -nn
 03:00.0 Non-Volatile memory controller [0108]: Micron Technology Inc 2550 NVMe SSD (DRAM-less) [1344:5416] (rev 01)
 04:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 15)
 ```
+
 </details>
 
 ## Power Management
@@ -61,6 +64,7 @@ My testing shows suspend issues (tested in GNOME) when using `hardware.nvidia.po
 This seems related to this [issue](https://github.com/NixOS/nixpkgs/issues/336723), which is offered a solution in [this discouse thread](https://discourse.nixos.org/t/suspend-resume-cycling-on-system-resume/32322/12) with this config:
 
 <details>
+
 ```nix
 systemd = {
      services."gnome-suspend" = {
@@ -98,6 +102,7 @@ systemd = {
     };
   };
 ```
+
 </details>
 
 At the same time, the Nvidia driver reports power management to still be working even with `nvidia.powerManagement.enable = false`:
